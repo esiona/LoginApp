@@ -58,7 +58,7 @@ class Users extends CI_Controller {
 				'errors' => validation_errors()
 				);
 			$this->session->set_flashdata($data);
-			
+			redirect('home');
 		} else {
 
 			$username = $this->input->post('username');
@@ -92,6 +92,44 @@ class Users extends CI_Controller {
 	public function logout () {
 		$this->session->sess_destroy();
 		redirect('home/index');
+	}
+
+	public function register() {
+		// $data['main_view'] = 'users/register_view';
+		// $this->load->view('layouts/main', $data);
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|matches[password]');
+		$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
+
+		if($this->form_validation->run() === FALSE){
+			// $data =  array('errors' => validation_errors() );
+			// $this->session->set_flashdata($data);
+			// redirect('home');
+			$data['main_view'] = 'users/register_view';
+			$this->load->view('layouts/main', $data);
+
+		} else {
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$firstname = $this->input->post('firstname');
+			$email = $this->input->post('email');
+			$lastname = $this->input->post('lastname');
+
+			$this->load->model('user_model.php');
+
+			$data = [
+				'username' => $username,
+				'password' => $password,
+				'firstname' => $firstname,
+				'lastname' => $lastname,
+				'email' => $email
+			];
+			$this->user_model->create_users($data);
+
+		}
 	}
 	
 }
