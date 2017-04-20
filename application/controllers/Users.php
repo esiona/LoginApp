@@ -130,7 +130,7 @@ class Users extends CI_Controller {
 			if($this->user_model->create_users($data)) {
 				redirect('home/index');
 			} else {
-				echo 'dsds';
+				redirect('users/register');
 			}
 
 		}
