@@ -55,7 +55,7 @@ class Users extends CI_Controller {
 
 		if($this->form_validation->run() === FALSE){
 			$data = array(
-				'errors' => validation_errors()
+				'errors' => validation_errors('<p class="bg-danger">')
 				);
 			$this->session->set_flashdata($data);
 			redirect('home');
@@ -127,7 +127,11 @@ class Users extends CI_Controller {
 				'lastname' => $lastname,
 				'email' => $email
 			];
-			$this->user_model->create_users($data);
+			if($this->user_model->create_users($data)) {
+				redirect('home/index');
+			} else {
+				
+			}
 
 		}
 	}
