@@ -118,7 +118,7 @@ class Users extends CI_Controller {
 			$email = $this->input->post('email');
 			$lastname = $this->input->post('lastname');
 
-			$this->load->model('user_model.php');
+			$this->load->model('user_model');
 
 			$data = [
 				'username' => $username,
@@ -130,7 +130,7 @@ class Users extends CI_Controller {
 			if($this->user_model->create_users($data)) {
 				redirect('home/index');
 			} else {
-				
+				echo 'dsds';
 			}
 
 		}

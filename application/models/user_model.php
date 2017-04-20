@@ -17,7 +17,11 @@ class User_model extends CI_Model
 	} 
 
 	function create_users($data){
-		$this->db->insert('users', $data);
+		if($this->db->insert('users', $data)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	function get_users($user_id){
