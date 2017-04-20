@@ -5,15 +5,23 @@ class User_model extends CI_Model
 {
 	function login_user($username, $pass){
 		$this->db->where('username' ,$username);
-		$this->db->where('password' ,$pass);
-
+		// $this->db->where('password' ,$pass);
 		$result = $this->db->get('users');
+		
+		$db_password = $result->row(0)->password;
 
-		if($result->num_rows() == 1) {
+		if(password_verify($pass, $db_password)) {
 			return $result->row(0)->id;
+
 		} else {
 			return false;
 		}
+
+		// if($result->num_rows() == 1) {
+		// 	return $result->row(0)->id;
+		// } else {
+		// 	return false;
+		// }
 	} 
 
 	function create_users($data){
