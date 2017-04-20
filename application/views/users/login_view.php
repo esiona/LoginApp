@@ -1,7 +1,7 @@
 <?php if($this->session->userdata('logged_in')): ?>
 
 	<?php if($this->session->userdata('username')): ?>
-		<?php echo $this->session->userdata('username'); ?>
+		<?php echo 'Welcome '.$this->session->userdata('username'); ?>
 	<?php endif; ?>
 		<?php echo form_open('users/logout'); ?>
 			<?php $data = array('class' => 'btn btn-primary', 'name' => 'submit', 'value' => 'Logout' );

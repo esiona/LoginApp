@@ -30,6 +30,9 @@
               <?php if (!($this->session->userdata('logged_in'))): ?>
 
               	<li><a href="<?php echo base_url('users/register')?>">Register</a></li>
+			  <?php else: ?>
+	              <li ><a href="<?php echo base_url('projects')?>">Projects</a></li>
+
 			  <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
