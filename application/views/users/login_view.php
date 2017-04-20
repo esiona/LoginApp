@@ -33,6 +33,17 @@
 	echo form_password($data);
 	 ?>
 
+	 <!--confirm password -->
+	<?php echo form_label('Confirm Password'); ?>
+	<?php
+
+	$data = array(
+		'class' => 'form-control',
+		'name' => 'confirm_password',
+		'placeholder' => 'Confirm pass'
+	);
+	echo form_password($data);
+	 ?>
 	 <!--submit -->
 	<?php
 
