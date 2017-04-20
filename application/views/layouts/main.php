@@ -18,7 +18,7 @@
 
 		</div>
 		<div class="col-xs-9">
-			<?php //$this->load->view($main_view); ?> 
+			<?php $this->load->view($main_view); ?> 
 
 		</div>
 	</div>

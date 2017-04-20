@@ -1,7 +1,15 @@
-<p>Helllllloo!!!</p>
+<p>Home view</p>
+<p class="bg-success">
+<?php if ($this->session->flashdata('login_success')) : ?>
+	<?php echo $this->session->flashdata('login_success'); ?>
+<?php endif; ?>
 
-<?php foreach ($results as $value) {
-		echo $value->username;
-}
+</p>
 
-?>
+
+<p class="bg-danger">
+<?php if ($this->session->flashdata('login_failed')) : ?>
+	<?php echo $this->session->flashdata('login_failed'); ?>
+<?php endif; ?>
+
+</p>
