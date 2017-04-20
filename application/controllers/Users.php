@@ -112,8 +112,12 @@ class Users extends CI_Controller {
 			$this->load->view('layouts/main', $data);
 
 		} else {
+
+			$options = ['cost' => 12];
+			$encrypted_pass = password_hash($this->input->post('password'), PASSWORD_BCRYPT, $options);
+			
 			$username = $this->input->post('username');
-			$password = $this->input->post('password');
+			$password = $encrypted_pass;
 			$firstname = $this->input->post('firstname');
 			$email = $this->input->post('email');
 			$lastname = $this->input->post('lastname');
@@ -128,6 +132,7 @@ class Users extends CI_Controller {
 				'email' => $email
 			];
 			if($this->user_model->create_users($data)) {
+				$this->session->set_flashdata('user_registered', 'User has been registered');
 				redirect('home/index');
 			} else {
 				redirect('users/register');
