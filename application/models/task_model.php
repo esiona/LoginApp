@@ -67,6 +67,15 @@ class Task_model extends CI_Model
 	}
 
 
+	public function getTasks($userid) {
+		$this->db->where('projects.user_id', $userid );
+		$this->db->join('tasks', 'projects.id = tasks.project_id');
+		$query = $this->db->get('projects');
+
+		return $query->result();
+
+	}
+
 	public function getProjectId($task_id){
 		$this->db->where('id', $task_id);
 
