@@ -25,6 +25,9 @@ class Projects extends CI_Controller {
 	public function display($id) {
 		$this->load->model('project_model');
 		$data['project'] = $this->project_model->getProject($id);
+		$data['completed_tasks'] = $this->project_model->getProjectsTask($id);
+		$data['uncompleted_tasks'] = $this->project_model->getProjectsTask($id, false);
+
 		$data['main_view'] = "projects/display";
 		$this->load->view('layouts/main', $data);
 	}
@@ -64,13 +67,11 @@ class Projects extends CI_Controller {
 		$this->form_validation->set_rules('body', 'Body', 'trim|required|min_length[3]');
 		
 		if($this->form_validation->run() === FALSE){
-			$this->load->model('project_model');
 			$data['project_data'] = $this->project_model->getProject($id);
 
 			$data['main_view'] = 'projects/edit';
 			$this->load->view('layouts/main', $data);
 		} else {
-			$this->load->model('project_model');
 			$data = [
 				'name' => $this->input->post('name'),
 				'body' => $this->input->post('body')
