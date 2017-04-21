@@ -39,7 +39,7 @@
 		<tbody>
 
 				<?php foreach ($projects as $project) : ?>
-					<?php echo '<tr><td>'.$project->name.'</td><td>'.$project->body.'</td><td><a href="projects/display/'.$project->id.'">VIEW</a></td></tr>'; ?>
+					<?php echo '<tr><td>'.$project->name.'</td><td>'.$project->body.'</td><td><a href="'.base_url().'projects/display/'.$project->id.'">VIEW</a></td></tr>'; ?>
 				<?php endforeach;?>
 
 		</tbody>
