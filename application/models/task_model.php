@@ -24,6 +24,8 @@ class Task_model extends CI_Model
 
 
 	public function update_task($taskid, $data) {
+		$this->db->where('id', $taskid);
+
 		if($this->db->update('tasks', $data)){
 			return true;
 		} else {
@@ -39,4 +41,40 @@ class Task_model extends CI_Model
 			return false;
 		}
 	}
+
+	public function complete_task($taskid) {
+		$this->db->where('id', $taskid);
+		$data = [
+			'status' => 0
+		];
+		if($this->db->update('tasks', $data)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function incomplete_task($taskid) {
+		$this->db->where('id', $taskid);
+		$data = [
+			'status' => 1
+		];
+		if($this->db->update('tasks', $data)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+
+	public function getProjectId($task_id){
+		$this->db->where('id', $task_id);
+
+		$query = $this->db->get('tasks');
+		return $query->row(0)->project_id;
+
+	}
+	
+
+	
 }

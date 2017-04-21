@@ -24,6 +24,15 @@
 		<?php echo $this->session->flashdata('task_updated'); ?>
 	<?php endif; ?>
 
+	<?php if ($this->session->flashdata('task_incompleted')) : ?>
+		<?php echo $this->session->flashdata('task_incompleted'); ?>
+	<?php endif; ?>
+
+
+	<?php if ($this->session->flashdata('task_completed')) : ?>
+		<?php echo $this->session->flashdata('task_completed'); ?>
+	<?php endif; ?>
+
 
 	<?php if ($this->session->flashdata('task_deleted')) : ?>
 		<?php echo $this->session->flashdata('task_deleted'); ?>

@@ -8,7 +8,7 @@
 		<ol >
 
 		<?php foreach ($completed_tasks as $task) :?>
-			<?php echo '<li><a href="tasks/display/'.$task->task_id.'">'.$task->task_name.'</a></li>'?>
+			<?php echo '<li><a href="'.base_url().'tasks/display/'.$task->task_id.'">'.$task->task_name.'</a></li>'?>
 		<?php endforeach; ?>	
 		</ol>
 
@@ -20,7 +20,7 @@
 		<ol >
 
 		<?php foreach ($uncompleted_tasks as $task) :?>
-			<?php echo '<li><a href="tasks/display/'.$task->task_id.'">'.$task->task_name.'</a></li>'?>
+			<?php echo '<li><a href="'.base_url().'tasks/display/'.$task->task_id.'">'.$task->task_name.'</a></li>'?>
 		<?php endforeach; ?>	
 		</ol>
 

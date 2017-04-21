@@ -89,7 +89,11 @@ class Projects extends CI_Controller {
 
 	public function delete($id){
 		$this->load->model('project_model');
+		
+		$this->project_model->delete_project_tasks($id);
+
 		$this->project_model->delete_project($id);
+
 		$this->session->set_flashdata('project_deleted', 'Project has been deleted');
 
 		redirect('projects/index');
