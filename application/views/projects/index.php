@@ -15,6 +15,20 @@
 	<?php if ($this->session->flashdata('login_success')) : ?>
 		<?php echo $this->session->flashdata('login_success'); ?>
 	<?php endif; ?>
+
+	<?php if ($this->session->flashdata('task_created')) : ?>
+		<?php echo $this->session->flashdata('task_created'); ?>
+	<?php endif; ?>
+
+	<?php if ($this->session->flashdata('task_updated')) : ?>
+		<?php echo $this->session->flashdata('task_updated'); ?>
+	<?php endif; ?>
+
+
+	<?php if ($this->session->flashdata('task_deleted')) : ?>
+		<?php echo $this->session->flashdata('task_deleted'); ?>
+	<?php endif; ?>
+
 </p>
 <a href="<?php echo base_url();?>projects/create" class="btn btn-primary pull-right">Create a Project</a>
 <table class="table table-hover">
