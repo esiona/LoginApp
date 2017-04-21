@@ -6,7 +6,7 @@
 		<tr>
 			<th>Task Name</th>
 			<th>Task Body</th>
-			<th>Task Date</th>
+			<th>Due on</th>
 
 		</tr>
 	</thead>

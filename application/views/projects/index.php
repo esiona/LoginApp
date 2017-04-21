@@ -40,7 +40,7 @@
 
 </p>
 <a href="<?php echo base_url();?>projects/create" class="btn btn-primary pull-right">Create a Project</a>
-<table class="table table-hover">
+<table class="table table-hover table-bordered">
 	<thead>
 		<tr>
 			<th>Project Name</th>

@@ -1,4 +1,4 @@
-<h2>Edit Project</h2>
+<h2>Edit Task</h2>
 
 <?php $attributes = array('id' => 'editForm', 'class' => 'form_horizontal'); ?>
 

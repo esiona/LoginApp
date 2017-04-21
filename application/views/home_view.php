@@ -60,7 +60,7 @@
 		<tbody>
 
 				<?php foreach ($tasks as $task) : ?>
-					<?php echo '<tr><td>'.$task->name.'</td><td>'.$task->body.'</td><td><a href="tasks/display/'.$task->id.'">VIEW</a></td></tr>'; ?>
+					<?php echo '<tr><td>'.$task->name.'</td><td>'.$task->body.'</td><td><a href="'.base_url().'tasks/display/'.$task->id.'">VIEW</a></td></tr>'; ?>
 				<?php endforeach;?>
 
 		</tbody>

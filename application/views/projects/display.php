@@ -1,6 +1,6 @@
 <h1>Project Name : <?php echo $project->name; ?></h1>
 <h4>Date created : <?php echo $project->date_created; ?></h4>
-<div class="col-xs-9">
+<div class="col-md-9">
 	<p><?php echo $project->body; ?></p>
 
 	<h3>Completed Tasks</h3>
@@ -30,7 +30,7 @@
 	
 
 </div>
-<div class="col-xs-3 pull-right">
+<div class="col-md-3 pull-right">
 	<ul class="list-group">
 		<h5>Project Actions</h5>
 		<li class="list-group-item"><a href="<?php echo base_url();?>tasks/create/<?php echo $project->id ?> ">Create Task</a></li>

@@ -1,0 +1,20 @@
+.container {
+/*	background-color: #14617A;
+	color: #fff;*/
+	background:url('../img/bg.jpg'); 
+}
+
+
+.jumbotron {
+	border:1px dashed black;
+	background-color: #fff;
+}
+
+.table-bordered {
+	border: 3px dashed #C19797;
+}
+
+
+form {
+	margin:10px;
+}
