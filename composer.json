@@ -11,20 +11,20 @@
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"php": ">=5.2.4",
 		"silex/silex": "^2.0.4",
 	    "monolog/monolog": "^1.22",
 	    "twig/twig": "^2.0",
-	    "symfony/twig-bridge": "^3"
+	    "symfony/twig-bridge": "^3",
+		"php": ">=5.2.4"
 
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
 	},
 	"require-dev": {
+		"heroku/heroku-buildpack-php": "*",
 		"mikey179/vfsStream": "1.1.*",
-		"phpunit/phpunit": "4.* || 5.*",
-		"heroku/heroku-buildpack-php": "*"
+		"phpunit/phpunit": "4.* || 5.*"
 
 	}
 }
